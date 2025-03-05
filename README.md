@@ -2,6 +2,8 @@
 
 A Model Context Protocol (MCP) server that enables AI assistants like Claude to interact with your Google Cloud Platform environment. This allows for natural language querying and management of your GCP resources during conversations.
 
+![GCP MCP Demo](images/claude.png)
+
 ## Features
 
 * 🔍 Query and modify GCP resources using natural language
@@ -21,7 +23,7 @@ A Model Context Protocol (MCP) server that enables AI assistants like Claude to 
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/gcp-mcp
+git clone https://github.com/eniayomi/gcp-mcp
 cd gcp-mcp
 ```
 
@@ -32,9 +34,25 @@ npm install
 
 ## Configuration
 
+### Claude Desktop
+
 1. Open Claude desktop app and go to Settings -> Developer -> Edit Config
 
 2. Add the following entry to your `claude_desktop_config.json`:
+
+via npm:
+```json
+{
+  "mcpServers": {
+    "gcp": {
+      "command": "npx",
+      "args": ["-y", "gcp-mcp"]
+    }
+  }
+}
+```
+
+If you installed from source:
 ```json
 {
   "mcpServers": {
@@ -51,12 +69,43 @@ npm install
 }
 ```
 
-Replace `/path/to/gcp-mcp` with the actual path to your project directory.
+Replace `/path/to/gcp-mcp` with the actual path to your project directory if using source installation.
 
-3. Set up GCP credentials:
-   - Either set up application default credentials using `gcloud auth application-default login`
+### Cursor
 
-4. Restart Claude desktop app
+1. Open Cursor and go to Settings (⌘,)
+2. Navigate to AI -> Model Context Protocol
+3. Add a new MCP configuration:
+```json
+{
+  "gcp": {
+    "command": "npx",
+    "args": ["-y", "gcp-mcp"]
+  }
+}
+```
+
+### Windsurf
+
+1. Open `~/.windsurf/config.json` (create if it doesn't exist)
+2. Add the MCP configuration:
+```json
+{
+  "mcpServers": {
+    "gcp": {
+      "command": "npx",
+      "args": ["-y", "gcp-mcp"]
+    }
+  }
+}
+```
+
+### GCP Setup
+
+1. Set up GCP credentials:
+   - Set up application default credentials using `gcloud auth application-default login`
+
+2. Refresh your AI assistant (Claude Desktop/Cursor/Windsurf)
 
 ## Usage
 
