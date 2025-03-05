@@ -1,6 +1,6 @@
 {
   "name": "gcp-mcp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Model Context Protocol (MCP) server for Google Cloud Platform - Talk to your GCP resources",
   "main": "index.ts",
   "bin": {
