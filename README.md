@@ -45,8 +45,8 @@ via npm:
 {
   "mcpServers": {
     "gcp": {
-      "command": "npx",
-      "args": ["-y", "gcp-mcp"]
+      "command": "sh",
+      "args": ["-c", "npx -y gcp-mcp"]
     }
   }
 }
@@ -79,8 +79,7 @@ Replace `/path/to/gcp-mcp` with the actual path to your project directory if usi
 ```json
 {
   "gcp": {
-    "command": "npx",
-    "args": ["-y", "gcp-mcp"]
+    "command": "npx -y gcp-mcp"
   }
 }
 ```
@@ -93,8 +92,7 @@ Replace `/path/to/gcp-mcp` with the actual path to your project directory if usi
 {
   "mcpServers": {
     "gcp": {
-      "command": "npx",
-      "args": ["-y", "gcp-mcp"]
+      "command": "npx -y gcp-mcp"
     }
   }
 }
