@@ -682,7 +682,7 @@ async function listAvailableProjects(): Promise<string[]> {
   
   try {
     const [projects] = await projectsClient.searchProjects();
-    return projects.map((p: any) => p.projectId);
+    return projects.map((p: any) => JSON.stringify(p));
   } catch (error) {
     console.error('Error listing projects:', error);
     return [];
