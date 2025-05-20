@@ -11,7 +11,8 @@
     "prepare": "npm run build",
     "build": "tsc",
     "dev": "tsx watch index.ts",
-    "test": "tsx bin.js"
+    "test": "tsx bin.js",
+    "test-mcp": "node test-mcp.js"
   },
   "keywords": [
     "gcp",
@@ -35,6 +36,7 @@
     "@google-cloud/sql": "^0.19.1",
     "@google-cloud/storage": "^7.15.0",
     "@modelcontextprotocol/sdk": "^1.6.1",
+    "dotenv": "^16.5.0",
     "google-auth-library": "^9.0.0",
     "googleapis": "^146.0.0",
     "ts-morph": "^24.0.0",

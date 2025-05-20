@@ -20,6 +20,10 @@ import { BudgetServiceClient } from '@google-cloud/billing-budgets';
 import { ClusterManagerClient } from '@google-cloud/container';
 import { Logging, Entry, Log } from '@google-cloud/logging';
 import { SqlInstancesServiceClient } from '@google-cloud/sql';
+import * as dotenv from 'dotenv';
+
+// Load environment variables from .env file
+dotenv.config();
 
 const codePrompt = `Your job is to answer questions about GCP environment by writing Javascript/TypeScript code using Google Cloud Client Libraries. The code must adhere to a few rules:
 - Must use promises and async/await
@@ -279,6 +283,7 @@ const retry = async <T>(fn: () => Promise<T>, retries = 3): Promise<T> => {
 // Initialize auth client with retry
 const initializeAuth = async () => {
   try {
+    console.error('Using credentials from: ' + process.env.GOOGLE_APPLICATION_CREDENTIALS);
     const auth = new GoogleAuth({
       scopes: ['https://www.googleapis.com/auth/cloud-platform']
     });
