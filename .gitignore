@@ -16,6 +16,7 @@ build/
 # GCP credentials
 credentials.json
 keyfile.json
+gcp-mcp-key.json
 *.pem
 
 # IDE
